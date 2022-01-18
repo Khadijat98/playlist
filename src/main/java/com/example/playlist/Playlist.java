@@ -1,9 +1,6 @@
 package com.example.playlist;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
@@ -15,16 +12,20 @@ public class Playlist {
     private String createdBy;
     private String playlistDescription;
     private String playlistImgUrl;
-    private ArrayList<Integer> songID;
+    private String songID;
 
 
-    public Playlist(int id, String playlistTitle, String createdBy, String playlistDescription, String playlistImgUrl, ArrayList<Integer> songID) {
+    public Playlist(int id, String playlistTitle, String createdBy, String playlistDescription, String playlistImgUrl, String songID) {
         this.id = id;
         this.playlistTitle = playlistTitle;
         this.createdBy = createdBy;
         this.playlistDescription = playlistDescription;
         this.playlistImgUrl = playlistImgUrl;
         this.songID = songID;
+    }
+
+    public Playlist() {
+
     }
 
     public int getId() {
@@ -47,7 +48,7 @@ public class Playlist {
         return playlistImgUrl;
     }
 
-    public ArrayList<Integer> getSongID() {
+    public String getSongID() {
         return songID;
     }
 }
