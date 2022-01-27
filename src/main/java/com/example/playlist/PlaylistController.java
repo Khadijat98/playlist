@@ -37,10 +37,10 @@ public class PlaylistController {
     }
 
     // delete playlist (delete entire custom playlist) endpoint - how can i do this without an id?
-    @DeleteMapping("playlist/{id}")
+    @DeleteMapping("/playlist/{id}")
     @Transactional
     public ResponseEntity<String> deletePlaylist(@PathVariable String id) {
         playlistRepository.deletePlaylistByid(Integer.parseInt(id));
-        return ResponseEntity.status(HttpStatus.OK).body("Your playlist with " + id + " has been deleted");
+        return ResponseEntity.status(HttpStatus.OK).body("Your playlist with an ID of " + id + " has been deleted");
     }
 }

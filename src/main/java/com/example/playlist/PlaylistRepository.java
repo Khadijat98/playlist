@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlaylistRepository extends JpaRepository<Playlist, String> {
-    Playlist deletePlaylistByid(int id);
+    String deletePlaylistByid(int id);
 }
